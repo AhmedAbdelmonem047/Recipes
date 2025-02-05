@@ -3,7 +3,8 @@
     <img src="{{mealImgSrc}}"
         class="w-full group-hover:rotate-[360deg] duration-700 transition-all rounded-full drop-shadow-xl  -translate-y-20  shadow-2xl"
         alt="">
-    <h3 class="-mt-12 text-xl font-semibold tracking-wider font-Pacifico">{{mealName}}
+    <h3 class="-mt-12 text-xl font-semibold tracking-wider font-Pacifico">{{ mealName.split(' ').slice(0, 4).join(' ')
+        }}
     </h3>
     @if (mealArea != "") {
     <h5 class="flex items-center justify-center gap-2 text-emerald-600"><i class="fas fa-globe-africa"></i>
