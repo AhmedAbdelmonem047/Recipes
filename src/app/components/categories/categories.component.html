@@ -1,14 +1,3 @@
-<div class="mt-8 sm:hidden">
-    <label for="tabs" class="sr-only">Select your country</label>
-    <select id="tabs"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-        [value]="activeIndex" (change)="onSelectChange($event)">
-        <option [value]=" -1">All</option>
-        @for (category of categoryList; track $index) {
-        <option [value]="$index">{{category.strCategory}}</option>
-        }
-    </select>
-</div>
 <ul class="flex-wrap hidden gap-4 mt-8 font-medium text-center text-gray-500 border-b border-gray-200 sm:flex">
     <li #test class="me-2">
         <a class="inline-block px-4 py-2 transition-all duration-300 border border-gray-400 rounded-full shadow active hover:shadow-xl hover:text-gray-600 hover:bg-gray-50"
@@ -22,3 +11,15 @@
     </li>
     }
 </ul>
+
+<div class="mt-8 sm:hidden">
+    <label for="tabs" class="sr-only">Select your country</label>
+    <select id="tabs"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        [value]="activeIndex" (change)="onSelectChange($event)">
+        <option [value]=" -1">All</option>
+        @for (category of categoryList; track $index) {
+        <option [value]="$index">{{category.strCategory}}</option>
+        }
+    </select>
+</div>
