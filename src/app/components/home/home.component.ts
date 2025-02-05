@@ -22,8 +22,6 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.getAllMeals()
-    // this.getCategories()
-    // this.getCatMeals('Beef')
   }
 
   onCategoryChange(catName: string) {

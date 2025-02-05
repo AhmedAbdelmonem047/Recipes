@@ -19,4 +19,7 @@ export class MealsAPIService {
   getCatMeals(query: string): Observable<any> {
     return this.http.get(`${baseURL}/filter.php?c=${query}`);
   }
+  getMealDetails(query: number): Observable<any> {
+    return this.http.get(`${baseURL}/lookup.php?i=${query}`);
+  }
 }

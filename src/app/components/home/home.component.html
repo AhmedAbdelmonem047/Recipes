@@ -8,12 +8,13 @@
         <div class="grid mt-24 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-20">
             @if (selectedCategory == "All") {
             @for (meal of allMealsList; track $index) {
-            <app-card [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal" [mealArea]="meal.strArea"></app-card>
+            <app-card [mealID]="meal.idMeal" [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal"
+                [mealArea]="meal.strArea"></app-card>
             }
             }
             @else {
             @for (meal of categoryMealList; track $index) {
-            <app-card [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal"></app-card>
+            <app-card [mealID]="meal.idMeal" [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal"></app-card>
             }
             }
         </div>
