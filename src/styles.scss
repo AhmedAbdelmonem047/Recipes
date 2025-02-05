@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(assets/fonts/Pacifico-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'ComicSansMS';
+    src: url(assets/fonts/ComicSansMS.ttf) format('truetype');
+}
