@@ -18,7 +18,7 @@ export class CardComponent {
   @Input(({ required: true })) mealImgSrc!: string;
   @Input(({ required: true })) mealName!: string;
   @Input() mealArea: string = "";
-  @Output() clickedBtn = new EventEmitter<boolean>();
+  @Output() sendID = new EventEmitter<number>();
 
   mealDetails!: MealDetails;
 
@@ -36,5 +36,8 @@ export class CardComponent {
         console.log(err);
       }
     })
+  }
+  clickedBtn(ID:number){
+    this.sendID.emit(ID);
   }
 }

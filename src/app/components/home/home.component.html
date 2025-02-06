@@ -9,14 +9,18 @@
             @if (selectedCategory == "All") {
             @for (meal of allMealsList; track $index) {
             <app-card [mealID]="meal.idMeal" [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal"
-                [mealArea]="meal.strArea"></app-card>
+                [mealArea]="meal.strArea" (sendID)="getSelectedID($event)"></app-card>
             }
             }
             @else {
             @for (meal of categoryMealList; track $index) {
-            <app-card [mealID]="meal.idMeal" [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal"></app-card>
+            <app-card [mealID]="meal.idMeal" [mealImgSrc]="meal.strMealThumb" [mealName]="meal.strMeal"
+                (sendID)="getSelectedID($event)"></app-card>
             }
             }
         </div>
     </div>
+    @if (selectedID != -1) {
+        <app-modal [mealID]="selectedID" (close)="getSelectedID($event)"></app-modal>
+    }
 </div>

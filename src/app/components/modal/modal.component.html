@@ -1,0 +1,45 @@
+<div class="fixed inset-0 flex items-center justify-center w-full p-4 bg-gray-900 bg-opacity-50" (click)="closeModal()">
+    <div class="relative w-full p-6 bg-white rounded-lg shadow-lg max-w-8xl sm:ml-64 max-h-[80vh] overflow-y-auto"
+        (click)="$event.stopPropagation()">
+        <button class="absolute text-gray-600 top-3 right-3 hover:text-gray-900" (click)="closeModal()">
+            ✖
+        </button>
+        <div class="container p-4">
+            <div class="flex flex-col gap-4 lg:flex-row ">
+                <div class="lg:w-2/3">
+                    <h1 class="mb-4 text-5xl font-semibold md:mb-4 font-Pacifico">{{mealDetails.strMeal}}</h1>
+                    <div class="grid items-stretch gap-4 lg:grid-cols-2">
+                        <div><img class="w-full mb-8 rounded-2xl" src="{{mealDetails.strMealThumb}}"
+                                alt="{{mealDetails.strMeal}}">
+                            <ul class="flex justify-center gap-4">
+                                <li class="px-4 py-2 text-white bg-red-600 rounded-lg "><a target="_blank"
+                                        href="{{mealDetails.strYoutube}}"
+                                        class="flex items-center justify-center gap-2">
+                                        <i class="fab fa-youtube"></i>Youtube
+                                    </a>
+                                </li>
+                                <li class="px-4 py-2 text-white rounded-lg bg-gradient-to-r bg-[#21ba75] ">
+                                    <a target="_blank" href="{{mealDetails.strSource}}"
+                                        class="flex items-center justify-center gap-2">
+                                        <i class="globe"></i>Source
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="text-sm font-Pacifico">{{mealDetails.strInstructions}}</p>
+                    </div>
+                </div>
+                <div class="p-4 lg:w-1/3">
+                    <div class="p-4 bg-white rounded-2xl">
+                        <h3 class="p-2 mb-4 text-2xl font-semibold border-b-4">Ingredients</h3>
+                        @for (item of mealIngredients; track $index) {
+                        <div class="flex justify-between p-2 border-b-2 last-of-type:border-b-0 ">
+                            <span>{{item.ingredient}}:</span><span>{{item.measure}}</span>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

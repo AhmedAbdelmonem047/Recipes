@@ -5,10 +5,11 @@ import { CategoriesList } from '../../interfaces/categories-list';
 import { CategoryMealsList } from '../../interfaces/category-meals-list';
 import { CategoriesComponent } from "../categories/categories.component";
 import { CardComponent } from "../card/card.component";
+import { ModalComponent } from "../modal/modal.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CategoriesComponent, CardComponent],
+  imports: [CategoriesComponent, CardComponent, ModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -19,6 +20,7 @@ export class HomeComponent {
   categoryList: CategoriesList[] = [];
   categoryMealList: CategoryMealsList[] = [];
   selectedCategory: string = "All";
+  selectedID:number = -1;
 
   ngOnInit(): void {
     this.getAllMeals()
@@ -31,6 +33,12 @@ export class HomeComponent {
       this.getAllMeals()
     else
       this.getCatMeals(catName);
+  }
+
+  getSelectedID(ID: number) {
+    this.selectedID = ID;
+    console.log(this.selectedID);
+    
   }
 
   getAllMeals() {

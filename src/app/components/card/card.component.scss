@@ -1,0 +1,40 @@
+.card {
+    background-color: #fff;
+    text-align: center;
+    transition: all 0.3s;
+    padding: 48px;
+    padding-bottom: 16px;
+    border-radius: 35px;
+
+    img {
+        width: 100%;
+        transition: all 0.7s;
+        border-radius: 100%;
+    }
+
+    h3 {
+        font-family: ComicSansMS;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        margin-top: -48px;
+    }
+
+    h5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+    }
+
+    button {
+        padding: 8px 32px;
+        margin-top: 16px;
+        font-weight: 600;
+        color: #fff;
+        transition: all 0.3s;
+        border-radius: 30px;
+    }
+}
